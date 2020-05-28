@@ -1,0 +1,69 @@
+---
+title: "Carbon Dioxide Emissions and Gross Domestic Product"
+author: "Marijus Brazickas"
+date: "5/28/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(shiny)
+library(gridExtra)
+library(UsingR)
+library(ggplot2)
+```
+
+## Introduction
+
+Determining the pollution of countries by measuring the carbon dioxide ($CO_2$) emission levels and its relation to country's standard of living. 
+
+A data set contains Gross Domestic Product (GDP), a measure of a country's economic output that accounts for its number of people (GDP per capita), and carbon dioxide ($CO_2$) emissions for 26 countries.
+
+This data set frame contains the following columns:
+
+- **GDP**
+a numeric vector
+
+- **perCapita**
+a numeric vector
+
+- **CO2**
+a numeric vecto
+
+## Table of dataset
+
+```{r, echo=FALSE, comment = ""}
+head(emissions, n=10)
+```
+
+## Summary of dataset
+```{r, echo=FALSE, comment = ""}
+summary(emissions)
+```
+
+
+## GDP relation to CO2 levels by country
+```{r, echo=FALSE}
+data(emissions)
+data=(head(emissions, 26))
+
+g1 <- ggplot(data=emissions, aes(x=GDP, y=CO2, color=CO2)) + geom_point(size=3.5) + labs(title="CO2 vs GDP") + geom_rug(col="steelblue",alpha=0.1, size=1.5) + geom_smooth(stat = 'smooth', color = 'Green', method = 'loess', formula = y ~ x) + 
+            geom_text(
+                label=rownames(data), 
+                #hjust = 1.19, nudge_x = 0.25, 
+                vjust = 1.4, nudge_y = 0.5,colour = "darkred",
+                check_overlap = T
+        
+            ) 
+       g1
+```
+
+## Emission levels of CO2, GDP, GDP per Capita 
+```{r, echo=FALSE}
+pairs(emissions[,1:3], pch = 19, col="green")
+```
+
+
+
+
+

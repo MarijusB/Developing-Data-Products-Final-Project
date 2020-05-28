@@ -1,0 +1,12 @@
+name: Emissions
+title: Emissions
+username:
+account: marijus
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2371996
+bundleId: 3201385
+url: https://marijus.shinyapps.io/Emissions/
+when: 1590686845.39937
+asMultiple: FALSE
+asStatic: FALSE

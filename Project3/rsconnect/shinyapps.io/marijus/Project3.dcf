@@ -1,0 +1,13 @@
+name: Project3
+title: Project3
+username:
+account: marijus
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2372118
+bundleId: 3202040
+url: https://marijus.shinyapps.io/Project3/
+when: 1590697382.38679
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Emissions.html|Emissions.Rmd
